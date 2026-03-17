@@ -1,50 +1,42 @@
-# Welcome to your Expo app 👋
+🚀 SiberEko - Yeni Nesil Yazılımcı Ekosistemi
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+SiberEko, yazılım ve siber güvenlik meraklılarını bir araya getiren, React Native ve Expo ile geliştirilmiş yeni nesil, "Öğren-Kazan" (Learn-to-Earn) odaklı ve oyunlaştırılmış bir topluluk uygulamasıdır.
 
-## Get started
+📌 Projenin Amacı ve Oyunlaştırma Özellikleri
 
-1. Install dependencies
+Bu projenin temel amacı; yazılımcıların yeteneklerini sergileyebileceği bir topluluk havuzu yaratırken, aynı zamanda eğitim modülü ile teknik bilgilerini test edip ekosistem içinde prestij kazanabilecekleri dinamik bir yapı kurmaktır. Proje, statik bir liste uygulamasından çıkıp Oyunlaştırma (Gamification) dinamikleriyle kullanıcıları öğrenmeye motive etmeyi hedefler:
 
-   ```bash
-   npm install
-   ```
+🎮 Seviye ve XP Sistemi: Kullanıcılar eğitim modülünde doğru bildikleri her soru için anında +300 XP kazanır. Her 1500 XP'de bir Level (Seviye) atlayarak statülerini yükseltirler.
 
-2. Start the app
+🎖️ Dinamik Rozet Yönetimi: Kullanıcılar belirli doğru cevap sayılarına ulaştıklarında (Örn: 1 doğru için "İlk Adım", 12+ doğru için "Eko-Master") özel rozetler kazanır ve bu başarımları profillerinde kalıcı olarak sergilenir.
 
-   ```bash
-   npx expo start
-   ```
+🔔 Gerçek Zamanlı Senkronizasyon Döngüsü: Kullanıcı eğitim modülünde soru çözdükçe veya "Hakkında" ile "GitHub" bilgilerini güncelledikçe, kazandığı XP, seviye ve rozetler "Keşfet" listesinde tüm topluluğa anlık olarak yansıtılır. Topluluktaki herkes bu güncellemeleri anında kendi ekranında görür.
 
-In the output, you'll find options to open the app in a
+🎥 Proje Tanıtım Videosu
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Uygulamanın tüm özelliklerinin (Kayıt, Eğitim/Quiz, Rozet Kazanımı ve Keşfet senaryoları) gösterildiği tanıtım videomuza aşağıdan ulaşabilirsiniz: 👉 YouTube Tanıtım Videosunu İzlemek İçin Tıklayın
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+📦 İndirilebilir APK Dosyası
 
-## Get a fresh project
+Uygulamayı Android cihazınızda doğrudan kurup test etmek için aşağıdaki linkten APK dosyasını indirebilirsiniz: 👉 SiberEko.apk Dosyasını İndir (Alternatif Expo Direkt İndirme Linki: Buraya Tıklayın)
 
-When you're ready, run:
+🛠️ Nasıl Çalıştırılır? (Installation & Run)
 
-```bash
-npm run reset-project
-```
+Projeyi bilgisayarınızda yerel olarak (local) çalıştırmak ve kodları incelemek için aşağıdaki adımları sırasıyla uygulayın:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Projeyi Bilgisayarınıza Klonlayın: Terminali (veya Komut İstemcisini) açın ve projeyi bilgisayarınıza indirin:
 
-## Learn more
+Bash
+git clone https://github.com/KULLANICI_ADIN/SiberEko.git
+cd SiberEko
+Gerekli Kütüphaneleri Kurun: Projenin çalışması için gereken paketleri yükleyin:
 
-To learn more about developing your project with Expo, look at the following resources:
+Bash
+npm install
+Uygulamayı Başlatın: Expo sunucusunu (önbelleği temizleyerek) çalıştırın:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Bash
+npx expo start -c
+Test Edin:
+Fiziksel Cihazda: Telefonunuza Expo Go uygulamasını (iOS/Android) indirin ve terminalde açılan QR kodu telefonunuzun kamerası ile okutun.
+Sanal Cihazda (Emulator): Bilgisayarınızda Android Studio kuruluysa, terminalde a tuşuna basarak Android emülatöründe başlatabilirsiniz.
