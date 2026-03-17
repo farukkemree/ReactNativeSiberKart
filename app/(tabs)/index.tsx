@@ -1,98 +1,71 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+type YazilimciKartiProps = {
+  ad: string;
+  uzmanlik: string;
+  seviye: string;
+};
 
-export default function HomeScreen() {
+const YazilimciKarti = ({ ad, uzmanlik, seviye }: YazilimciKartiProps) => {
+  const [musaitMi, setMusaitMi] = useState(true);
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+    <View style={[styles.card, { borderColor: musaitMi ? '#00FF41' : '#FF3131' }]}>
+      <View style={styles.header}>
+        <Text style={styles.avatar}>{musaitMi ? '👨‍💻' : '⌛'}</Text>
+        <View>
+          <Text style={styles.nameText}>{ad}</Text>
+          <Text style={styles.subText}>{uzmanlik}</Text>
+        </View>
+      </View>
+      
+      <View style={styles.infoRow}>
+        <View style={styles.badge}>
+          <Text style={styles.badgeText}>{seviye}</Text>
+        </View>
+        <Text style={[styles.statusText, { color: musaitMi ? '#00FF41' : '#FF3131' }]}>
+          {musaitMi ? "● MÜSAİT" : "● ÇALIŞIYOR"}
+        </Text>
+      </View>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      <TouchableOpacity 
+        style={[styles.button, { backgroundColor: musaitMi ? '#00FF41' : '#222' }]}
+        onPress={() => setMusaitMi(false)}
+        disabled={!musaitMi}
+      >
+        <Text style={[styles.buttonText, { color: musaitMi ? '#000' : '#888' }]}>
+          {musaitMi ? "İşe Al" : "Projelerde Çalışıyor"}
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default function App() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="light-content" />
+      <YazilimciKarti 
+        ad="Faruk" 
+        uzmanlik="Software Engineer & Cyber Security" 
+        seviye="Senior Candidate" 
+      />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
+  container: { flex: 1, backgroundColor: '#0A0A0A', justifyContent: 'center', alignItems: 'center' },
+  card: { width: '90%', backgroundColor: '#151515', borderRadius: 20, padding: 25, borderWidth: 1.5, elevation: 20, shadowColor: '#00FF41', shadowOpacity: 0.2, shadowOffset: { width: 0, height: 10 } },
+  header: { flexDirection: 'row', alignItems: 'center', marginBottom: 20 },
+  avatar: { fontSize: 45, marginRight: 15 },
+  nameText: { fontSize: 22, fontWeight: 'bold', color: '#FFF' },
+  subText: { color: '#00FF41', fontSize: 14, fontWeight: '500' },
+  infoRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 30 },
+  badge: { backgroundColor: '#333', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 6 },
+  badgeText: { color: '#FFF', fontSize: 12, fontWeight: 'bold' },
+  statusText: { fontWeight: 'bold', fontSize: 13 },
+  button: { padding: 18, borderRadius: 12, alignItems: 'center' },
+  buttonText: { fontWeight: '900', fontSize: 16 },
 });
