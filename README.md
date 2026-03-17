@@ -15,14 +15,14 @@ Bu projenin temel amacı; yazılımcıların yeteneklerini sergileyebileceği bi
 ## 🎥 Proje Tanıtım Videosu
 
 Uygulamanın tüm özelliklerinin (Kayıt, Eğitim/Quiz, Rozet Kazanımı ve Keşfet senaryoları) gösterildiği tanıtım videomuza aşağıdan ulaşabilirsiniz:
-👉 **[YouTube Tanıtım Videosunu İzlemek İçin Tıklayın](#)**
+👉 **https://youtu.be/bzxEdWEr_AI(#)**
 
 ---
 
 ## 📦 İndirilebilir APK Dosyası
 
 Uygulamayı Android cihazınızda doğrudan kurup test etmek için aşağıdaki linkten APK dosyasını indirebilirsiniz:
-👉 **[SiberEko.apk Dosyasını İndir](#)** *(Alternatif Expo Direkt İndirme Linki: [Buraya Tıklayın](#))*
+👉 **https://expo.dev/artifacts/eas/qYC64yo3ARVqLfmAvFZFvP.apk(#)** *(Alternatif Expo Direkt İndirme Linki: [Buraya Tıklayın](#))*
 
 ---
 
