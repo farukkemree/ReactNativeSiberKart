@@ -30,26 +30,23 @@ Uygulamayı Android cihazınızda doğrudan kurup test etmek için aşağıdaki 
 
 Projeyi bilgisayarınızda yerel olarak (local) çalıştırmak ve kodları incelemek için aşağıdaki adımları sırasıyla uygulayın:
 
-**1. Projeyi Bilgisayarınıza Klonlayın:**
+*1. Projeyi Bilgisayarınıza Klonlayın:*
 Terminali (veya Komut İstemcisini) açın ve projeyi bilgisayarınıza indirin:
-
 bash
 git clone [https://github.com/KULLANICI_ADIN/SiberEko.git](https://github.com/KULLANICI_ADIN/SiberEko.git)
 cd SiberEko
 
-**2. Gerekli Kütüphaneleri Kurun:**
+*2. Gerekli Kütüphaneleri Kurun:*
 Projenin çalışması için gereken paketleri yükleyin:
-
 Bash
 npm install
 
-**3. Uygulamayı Başlatın:**
+*3. Uygulamayı Başlatın:*
 Expo sunucusunu (önbelleği temizleyerek) çalıştırın:
-
 Bash
 npx expo start -c
 
-**4. Test Edin:**
+*4. Test Edin:*
 
 Fiziksel Cihazda: Telefonunuza Expo Go uygulamasını (iOS/Android) indirin ve terminalde açılan QR kodu telefonunuzun kamerası ile okutun.
 
